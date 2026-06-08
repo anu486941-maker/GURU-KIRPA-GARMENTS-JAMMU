@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guru Kirpa Garments | Boutique Collection</title>
+  <meta name="description" content="Explore our premium collection: Embroidered Magenta Shirt, Hot Pink Cropped Co-ord Set, Pink Wrap Top with Jean Skirt, and Embroidered Frock. Cash on Delivery (COD) & UPI support." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Configuration for Custom Theme Options -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              black: '#09090b',
+              charcoal: '#18181b',
+              slate: '#27272a',
+              magenta: '#d946ef',
+              pink: '#db2777',
+            }
+          },
+          animation: {
+            'pulse-glow': 'pulseGlow 2.5s infinite alternate',
+            'fade-in': 'fadeIn 0.6s ease-out forwards',
+            'slide-up': 'slideUp 0.5s ease-out forwards',
+          },
+          keyframes: {
+            pulseGlow: {
+              '0%': { boxShadow: '0 0 15px -3px rgba(217, 70, 239, 0.2)' },
+              '100%': { boxShadow: '0 0 30px 5px rgba(217, 70, 239, 0.45)' }
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' }
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(15px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Premium scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #09090b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #27272a;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #db2777;
+    }
+    
+    /* Custom Glow and Transition Utilities */
+    .glow-magenta {
+      filter: drop-shadow(0 0 25px rgba(219, 39, 119, 0.25));
+    }
+    .blur-backdrop {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="bg-brand-black text-neutral-100 font-sans min-h-screen flex flex-col antialiased">
+
+  <!-- STICKY HEADER -->
+  <header class="sticky top-0 z-50 bg-brand-black/75 blur-backdrop border-b border-neutral-800 transition-all duration-300">
+    <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2 font-display text-xl font-bold tracking-tight text-white hover:opacity-95 transition-opacity">
+        <span class="w-3 h-3 rounded-full bg-brand-magenta animate-pulse"></span>
+        Guru Kirpa Garments
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-400">
+        <a href="#shop" class="hover:text-white transition-colors">Boutique Collection</a>
+        <a href="#details" class="hover:text-white transition-colors">Specifications</a>
+        <a href="#payment" class="hover:text-white transition-colors">Order & Pay</a>
+        <a href="#contact" class="hover:text-white transition-colors">Boutique Info</a>
+      </nav>
+
+      <!-- CTA on Desktop Header -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#payment" class="inline-flex items-center justify-center rounded-full bg-neutral-800 hover:bg-neutral-700 px-5 py-2 text-xs font-semibold text-white tracking-wide border border-neutral-700 transition-all">
+          UPI Payment
+        </a>
+        <a href="https://wa.me/917889472924?text=Hello%20Anu%2C%20I%20am%20interested%20in%2520your%2520Boutique%2520Collection." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 justify-center rounded-full bg-gradient-to-r from-brand-pink to-brand-magenta hover:opacity-90 px-5 py-2 text-xs font-semibold text-white tracking-wide transition-all shadow-lg shadow-brand-pink/20">
+          <span class="material-symbols-outlined text-[1rem]">chat</span> Chat with Anu
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-white focus:outline-none transition-colors" aria-label="Toggle menu">
+        <span class="material-symbols-outlined block" id="menuIcon">menu</span>
+        <span class="material-symbols-outlined hidden" id="closeIcon">close</span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-neutral-800 bg-brand-black/95 blur-backdrop">
+      <div class="flex flex-col gap-4 px-6 py-6 text-base font-medium text-neutral-300">
+        <a href="#shop" class="hover:text-white py-1 transition-colors" onclick="toggleMobileMenu()">Boutique Collection</a>
+        <a href="#details" class="hover:text-white py-1 transition-colors" onclick="toggleMobileMenu()">Specifications</a>
+        <a href="#payment" class="hover:text-white py-1 transition-colors" onclick="toggleMobileMenu()">Order & Pay</a>
+        <a href="#contact" class="hover:text-white py-1 transition-colors" onclick="toggleMobileMenu()">Boutique Info</a>
+        
+        <div class="border-t border-neutral-800 pt-4 mt-2 flex flex-col gap-3">
+          <a href="#payment" class="inline-flex w-full items-center justify-center rounded-full bg-neutral-900 border border-neutral-800 py-3 text-sm font-semibold text-white transition-all" onclick="toggleMobileMenu()">
+            UPI Payment Info
+          </a>
+          <a href="https://wa.me/917889472924?text=Hello%20Anu%2C%20I%20want%20to%20order%20from%20Guru%20Kirpa%20Garments." target="_blank" rel="noopener noreferrer" class="inline-flex w-full items-center gap-2 justify-center rounded-full bg-gradient-to-r from-brand-pink to-brand-magenta py-3 text-sm font-semibold text-white transition-all shadow-md shadow-brand-pink/20" onclick="toggleMobileMenu()">
+            <span class="material-symbols-outlined text-[1.1rem]">chat</span> Chat with Anu on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow mx-auto max-w-6xl w-full px-6 py-8 md:py-16 flex flex-col gap-16 md:gap-24 animate-fade-in">
+
+    <!-- HERO & SHOP SECTION -->
+    <section id="shop" class="flex flex-col gap-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-pink/10 border border-brand-pink/30 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-brand-magenta shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-magenta animate-ping"></span> COD Available India-Wide
+        </span>
+        <h1 class="mt-6 font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          Exclusive Boutique <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-magenta">Collection</span>
+        </h1>
+        <p class="mt-4 text-neutral-400 text-sm sm:text-base leading-relaxed">
+          Discover handpicked boutique clothing. Choose either **Cash on Delivery (COD)** or pay via **UPI**. Orders include a **3-Day replacement guarantee with full refund support**!
+        </p>
+      </div>
+
+      <!-- Products Grid (2x2 on Desktop) -->
+      <div class="grid gap-8 lg:grid-cols-2 md:grid-cols-2 items-stretch mt-6">
+        
+        <!-- PRODUCT 1: Magenta Embroidered Shirt -->
+        <article class="flex flex-col justify-between rounded-3xl bg-brand-charcoal/40 border border-neutral-900 p-6 md:p-8 hover:border-brand-magenta/30 transition-all duration-300 hover:shadow-2xl hover:shadow-brand-pink/5 group">
+          
+          <!-- Image and Top Info -->
+          <div>
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-neutral-950 border border-neutral-900">
+              <img src="images/product.png" alt="Handcrafted Floral Embroidered Magenta Shirt" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-60"></div>
+              
+              <span class="absolute top-4 left-4 rounded-full bg-brand-black/75 border border-white/10 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-brand-magenta">
+                Floral Embroidery
+              </span>
+              
+              <span class="absolute top-4 right-4 rounded-full bg-emerald-950/80 border border-emerald-500/30 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1">
+                <span class="material-symbols-outlined text-[0.8rem]">local_shipping</span> COD + UPI
+              </span>
+              
+              <button onclick="openLightbox('images/product.png')" class="absolute bottom-4 right-4 p-2 rounded-xl bg-brand-black/80 blur-backdrop border border-white/10 text-white hover:text-brand-magenta transition-colors" aria-label="Zoom photo">
+                <span class="material-symbols-outlined block text-[1.25rem]">zoom_in</span>
+              </button>
+            </div>
+
+            <!-- Title & Price -->
+            <div class="mt-6 flex justify-between items-start gap-4">
+              <div>
+                <span class="text-xs font-semibold text-brand-magenta">Premium Top</span>
+                <h2 class="text-xl font-bold text-white mt-1 group-hover:text-brand-magenta transition-colors">Embroidered Magenta Shirt</h2>
+              </div>
+              <div class="text-right">
+                <span class="text-xl font-extrabold text-white">₹1,800</span>
+                <p class="text-[0.65rem] text-neutral-500 line-through">₹2,999</p>
+              </div>
+            </div>
+
+            <p class="mt-4 text-xs text-neutral-400 leading-relaxed">
+              Exquisite long-sleeve magenta shirt featuring handcrafted tone-on-tone floral embroidery. Styled with a classic collar in a soft, breathable cotton-rayon blend.
+            </p>
+          </div>
+
+          <!-- Sizing & CTA -->
+          <div class="mt-6 pt-6 border-t border-neutral-900">
+            <!-- Sizing Buttons -->
+            <div class="mb-4">
+              <p class="text-[0.65rem] font-bold text-neutral-400 uppercase tracking-wider mb-2">Select Size</p>
+              <div class="flex gap-2" id="sizeSelectorP1">
+                <button onclick="selectSize('P1', 'S')" class="p1-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">S</button>
+                <button onclick="selectSize('P1', 'M')" class="p1-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">M</button>
+                <button onclick="selectSize('P1', 'L')" class="p1-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">L</button>
+                <button onclick="selectSize('P1', 'XL')" class="p1-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">XL</button>
+                <button onclick="selectSize('P1', 'XXL')" class="p1-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">XXL</button>
+              </div>
+              <p id="sizeWarningP1" class="mt-1 text-[0.65rem] text-brand-magenta hidden">Please choose a size</p>
+            </div>
+
+            <!-- Action Button -->
+            <button onclick="buyProduct('P1')" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-pink to-brand-magenta hover:opacity-95 text-white py-3 text-xs font-bold transition-all shadow-md">
+              <span class="material-symbols-outlined text-[1rem]">shopping_cart</span> Buy on WhatsApp / COD
+            </button>
+          </div>
+
+        </article>
+
+        <!-- PRODUCT 2: Hot Pink Cropped Co-ord Set -->
+        <article class="flex flex-col justify-between rounded-3xl bg-brand-charcoal/40 border border-neutral-900 p-6 md:p-8 hover:border-brand-magenta/30 transition-all duration-300 hover:shadow-2xl hover:shadow-brand-pink/5 group">
+          
+          <!-- Image and Top Info -->
+          <div>
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-neutral-950 border border-neutral-900">
+              <img src="images/product2.jpg" alt="Chic Hot Pink Cropped Co-ord Set" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-60"></div>
+              
+              <span class="absolute top-4 left-4 rounded-full bg-brand-black/75 border border-white/10 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-brand-magenta">
+                New Co-ord Set
+              </span>
+              
+              <span class="absolute top-4 right-4 rounded-full bg-emerald-950/80 border border-emerald-500/30 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1">
+                <span class="material-symbols-outlined text-[0.8rem]">local_shipping</span> COD + UPI
+              </span>
+              
+              <button onclick="openLightbox('images/product2.jpg')" class="absolute bottom-4 right-4 p-2 rounded-xl bg-brand-black/80 blur-backdrop border border-white/10 text-white hover:text-brand-magenta transition-colors" aria-label="Zoom photo">
+                <span class="material-symbols-outlined block text-[1.25rem]">zoom_in</span>
+              </button>
+            </div>
+
+            <!-- Title & Price -->
+            <div class="mt-6 flex justify-between items-start gap-4">
+              <div>
+                <span class="text-xs font-semibold text-brand-magenta">Boutique Suit</span>
+                <h2 class="text-xl font-bold text-white mt-1 group-hover:text-brand-magenta transition-colors">Hot Pink Cropped Co-ord Set</h2>
+              </div>
+              <div class="text-right">
+                <span class="text-xl font-extrabold text-white">₹1,199</span>
+                <p class="text-[0.65rem] text-neutral-500 line-through">₹1,999</p>
+              </div>
+            </div>
+
+            <p class="mt-4 text-xs text-neutral-400 leading-relaxed">
+              Vibrant hot pink co-ord set featuring a short-sleeve cropped utility shirt with dual cargo pockets, button-up front, and matching trousers.
+            </p>
+          </div>
+
+          <!-- Sizing & CTA -->
+          <div class="mt-6 pt-6 border-t border-neutral-900">
+            <!-- Sizing Buttons -->
+            <div class="mb-4">
+              <p class="text-[0.65rem] font-bold text-neutral-400 uppercase tracking-wider mb-2">Select Size</p>
+              <div class="flex gap-2" id="sizeSelectorP2">
+                <button onclick="selectSize('P2', 'S')" class="p2-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">S</button>
+                <button onclick="selectSize('P2', 'M')" class="p2-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">M</button>
+                <button onclick="selectSize('P2', 'L')" class="p2-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">L</button>
+                <button onclick="selectSize('P2', 'XL')" class="p2-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">XL</button>
+                <button onclick="selectSize('P2', 'XXL')" class="p2-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">XXL</button>
+              </div>
+              <p id="sizeWarningP2" class="mt-1 text-[0.65rem] text-brand-magenta hidden">Please choose a size</p>
+            </div>
+
+            <!-- Action Button -->
+            <button onclick="buyProduct('P2')" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-pink to-brand-magenta hover:opacity-95 text-white py-3 text-xs font-bold transition-all shadow-md">
+              <span class="material-symbols-outlined text-[1rem]">shopping_cart</span> Buy on WhatsApp / COD
+            </button>
+          </div>
+
+        </article>
+
+        <!-- PRODUCT 3: Pink Top with Jean Skirt -->
+        <article class="flex flex-col justify-between rounded-3xl bg-brand-charcoal/40 border border-neutral-900 p-6 md:p-8 hover:border-brand-magenta/30 transition-all duration-300 hover:shadow-2xl hover:shadow-brand-pink/5 group">
+          
+          <!-- Image and Top Info -->
+          <div>
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-neutral-950 border border-neutral-900">
+              <img src="images/product3.jpg" alt="Pink Wrap Top with Jean Skirt" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-60"></div>
+              
+              <span class="absolute top-4 left-4 rounded-full bg-brand-black/75 border border-white/10 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-brand-magenta">
+                Sequin Wrap Set
+              </span>
+              
+              <span class="absolute top-4 right-4 rounded-full bg-emerald-950/80 border border-emerald-500/30 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1">
+                <span class="material-symbols-outlined text-[0.8rem]">local_shipping</span> COD + UPI
+              </span>
+              
+              <button onclick="openLightbox('images/product3.jpg')" class="absolute bottom-4 right-4 p-2 rounded-xl bg-brand-black/80 blur-backdrop border border-white/10 text-white hover:text-brand-magenta transition-colors" aria-label="Zoom photo">
+                <span class="material-symbols-outlined block text-[1.25rem]">zoom_in</span>
+              </button>
+            </div>
+
+            <!-- Title & Price -->
+            <div class="mt-6 flex justify-between items-start gap-4">
+              <div>
+                <span class="text-xs font-semibold text-brand-magenta">Trendy Set</span>
+                <h2 class="text-xl font-bold text-white mt-1 group-hover:text-brand-magenta transition-colors">Pink Top & Jean Skirt</h2>
+              </div>
+              <div class="text-right">
+                <span class="text-xl font-extrabold text-white">₹1,100</span>
+                <p class="text-[0.65rem] text-neutral-500 line-through">₹1,799</p>
+              </div>
+            </div>
+
+            <p class="mt-4 text-xs text-neutral-400 leading-relaxed">
+              Sparkling pink long-sleeve wrap top embellished with all-over silver micro-studs, paired with a classic high-waist denim jean skirt.
+            </p>
+          </div>
+
+          <!-- Sizing & CTA -->
+          <div class="mt-6 pt-6 border-t border-neutral-900">
+            <!-- Sizing Buttons -->
+            <div class="mb-4">
+              <p class="text-[0.65rem] font-bold text-neutral-400 uppercase tracking-wider mb-2">Select Size</p>
+              <div class="flex gap-2" id="sizeSelectorP3">
+                <button onclick="selectSize('P3', 'S')" class="p3-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">S</button>
+                <button onclick="selectSize('P3', 'M')" class="p3-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">M</button>
+                <button onclick="selectSize('P3', 'L')" class="p3-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">L</button>
+                <button onclick="selectSize('P3', 'XL')" class="p3-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">XL</button>
+                <button onclick="selectSize('P3', 'XXL')" class="p3-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">XXL</button>
+              </div>
+              <p id="sizeWarningP3" class="mt-1 text-[0.65rem] text-brand-magenta hidden">Please choose a size</p>
+            </div>
+
+            <!-- Action Button -->
+            <button onclick="buyProduct('P3')" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-pink to-brand-magenta hover:opacity-95 text-white py-3 text-xs font-bold transition-all shadow-md">
+              <span class="material-symbols-outlined text-[1rem]">shopping_cart</span> Buy on WhatsApp / COD
+            </button>
+          </div>
+
+        </article>
+
+        <!-- PRODUCT 4: Embroidered Lace-Collar Frock -->
+        <article class="flex flex-col justify-between rounded-3xl bg-brand-charcoal/40 border border-neutral-900 p-6 md:p-8 hover:border-brand-magenta/30 transition-all duration-300 hover:shadow-2xl hover:shadow-brand-pink/5 group">
+          
+          <!-- Image and Top Info -->
+          <div>
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-neutral-950 border border-neutral-900">
+              <img src="images/product4.jpg" alt="Artisanal Embroidered Lace Collar Frock" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-60"></div>
+              
+              <span class="absolute top-4 left-4 rounded-full bg-brand-black/75 border border-white/10 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-brand-magenta">
+                Floral Frock
+              </span>
+              
+              <span class="absolute top-4 right-4 rounded-full bg-emerald-950/80 border border-emerald-500/30 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1">
+                <span class="material-symbols-outlined text-[0.8rem]">local_shipping</span> COD + UPI
+              </span>
+              
+              <button onclick="openLightbox('images/product4.jpg')" class="absolute bottom-4 right-4 p-2 rounded-xl bg-brand-black/80 blur-backdrop border border-white/10 text-white hover:text-brand-magenta transition-colors" aria-label="Zoom photo">
+                <span class="material-symbols-outlined block text-[1.25rem]">zoom_in</span>
+              </button>
+            </div>
+
+            <!-- Title & Price -->
+            <div class="mt-6 flex justify-between items-start gap-4">
+              <div>
+                <span class="text-xs font-semibold text-brand-magenta">Premium Dress</span>
+                <h2 class="text-xl font-bold text-white mt-1 group-hover:text-brand-magenta transition-colors">Embroidered Collar Frock</h2>
+              </div>
+              <div class="text-right">
+                <span class="text-xl font-extrabold text-white">₹1,000</span>
+                <p class="text-[0.65rem] text-neutral-500 line-through">₹1,699</p>
+              </div>
+            </div>
+
+            <p class="mt-4 text-xs text-neutral-400 leading-relaxed">
+              Lavender A-line midi frock featuring white spiral-floral vine embroidery all over, a white lace Peter Pan collar, buttoned bodice, and comfortable 3/4 sleeves.
+            </p>
+          </div>
+
+          <!-- Sizing, Color & CTA -->
+          <div class="mt-6 pt-6 border-t border-neutral-900">
+            <!-- Color Selection Row -->
+            <div class="mb-4">
+              <p class="text-[0.65rem] font-bold text-neutral-400 uppercase tracking-wider mb-2">Select Color</p>
+              <div class="flex gap-2" id="colorSelectorP4">
+                <button onclick="selectColor('P4', 'Lavender')" class="p4-col-btn px-3 py-1.5 rounded-lg bg-brand-pink/10 border border-brand-magenta text-xs font-semibold text-white transition-all">Lavender</button>
+                <button onclick="selectColor('P4', 'Light Green')" class="p4-col-btn px-3 py-1.5 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">Light Green</button>
+                <button onclick="selectColor('P4', 'Other')" class="p4-col-btn px-3 py-1.5 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">Others</button>
+              </div>
+            </div>
+
+            <!-- Sizing Buttons -->
+            <div class="mb-4">
+              <p class="text-[0.65rem] font-bold text-neutral-400 uppercase tracking-wider mb-2">Select Size</p>
+              <div class="flex gap-2" id="sizeSelectorP4">
+                <button onclick="selectSize('P4', 'S')" class="p4-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">S</button>
+                <button onclick="selectSize('P4', 'M')" class="p4-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">M</button>
+                <button onclick="selectSize('P4', 'L')" class="p4-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">L</button>
+                <button onclick="selectSize('P4', 'XL')" class="p4-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">XL</button>
+                <button onclick="selectSize('P4', 'XXL')" class="p4-btn w-9 h-9 rounded-lg bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:border-brand-magenta transition-all">XXL</button>
+              </div>
+              <p id="sizeWarningP4" class="mt-1 text-[0.65rem] text-brand-magenta hidden">Please choose a size</p>
+            </div>
+
+            <!-- Action Button -->
+            <button onclick="buyProduct('P4')" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-pink to-brand-magenta hover:opacity-95 text-white py-3 text-xs font-bold transition-all shadow-md">
+              <span class="material-symbols-outlined text-[1rem]">shopping_cart</span> Buy on WhatsApp / COD
+            </button>
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+    <!-- TRUST POLICIES & GUARANTEES (3-Day Refund/Replace & COD) -->
+    <section class="border-t border-neutral-900 pt-16 animate-slide-up">
+      <div class="grid gap-6 md:grid-cols-3">
+        
+        <div class="rounded-2xl bg-neutral-900/30 border border-neutral-900 p-8 flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-pink/10 border border-brand-pink/20 flex items-center justify-center text-brand-magenta flex-shrink-0">
+            <span class="material-symbols-outlined text-[1.75rem]">published_with_changes</span>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white">3-Day Easy Replacement</h3>
+            <p class="mt-2 text-xs text-neutral-400 leading-relaxed">
+              If your garment doesn't fit or matches incorrectly, request an exchange within 3 days of delivery. We will handle the exchange directly.
+            </p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-neutral-900/30 border border-neutral-900 p-8 flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-pink/10 border border-brand-pink/20 flex items-center justify-center text-brand-magenta flex-shrink-0">
+            <span class="material-symbols-outlined text-[1.75rem]">assignment_return</span>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white">100% Money-Back Refund</h3>
+            <p class="mt-2 text-xs text-neutral-400 leading-relaxed">
+              Your satisfaction is guaranteed. If we cannot replace your size or if you prefer to cancel, we will issue a full refund back to your payment account.
+            </p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-neutral-900/30 border border-neutral-900 p-8 flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-pink/10 border border-brand-pink/20 flex items-center justify-center text-brand-magenta flex-shrink-0">
+            <span class="material-symbols-outlined text-[1.75rem]">local_shipping</span>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white">Cash on Delivery (COD)</h3>
+            <p class="mt-2 text-xs text-neutral-400 leading-relaxed">
+              Pay with cash when the delivery agent delivers your package to your doorstep. Available for all locations across India.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRODUCT HIGHLIGHTS & SPECIFICATIONS -->
+    <section id="details" class="border-t border-neutral-900 pt-16">
+      <div class="text-center max-w-xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-magenta">Premium Quality</span>
+        <h2 class="mt-3 font-display text-3xl font-extrabold text-white">Artisanal Specifications</h2>
+        <p class="mt-3 text-sm text-neutral-400">Review the details and fabrics of our handpicked local garments.</p>
+      </div>
+
+      <div class="mt-12 rounded-3xl bg-neutral-900/20 border border-neutral-900/60 p-6 md:p-10">
+        <div class="flex border-b border-neutral-900 pb-4 mb-6 gap-6 overflow-x-auto">
+          <button onclick="showSpecTab('spec1')" id="tab-spec1" class="text-sm font-bold pb-2 border-b-2 border-brand-magenta text-white transition-all whitespace-nowrap">Magenta Embroidered Shirt</button>
+          <button onclick="showSpecTab('spec2')" id="tab-spec2" class="text-sm font-bold pb-2 border-b-2 border-transparent text-neutral-400 hover:text-white transition-all whitespace-nowrap">Hot Pink Co-ord Set</button>
+          <button onclick="showSpecTab('spec3')" id="tab-spec3" class="text-sm font-bold pb-2 border-b-2 border-transparent text-neutral-400 hover:text-white transition-all whitespace-nowrap">Pink Top & Jean Skirt</button>
+          <button onclick="showSpecTab('spec4')" id="tab-spec4" class="text-sm font-bold pb-2 border-b-2 border-transparent text-neutral-400 hover:text-white transition-all whitespace-nowrap">Embroidered collar Frock</button>
+        </div>
+
+        <!-- Spec Tab 1 -->
+        <div id="content-spec1" class="spec-content">
+          <div class="grid gap-6 md:grid-cols-2 text-sm text-neutral-300">
+            <div class="flex flex-col gap-4">
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Product Class</span>
+                <span class="font-semibold text-white">Embroidered Dress Shirt</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Fabric Composition</span>
+                <span class="font-semibold text-white">Premium Cotton-Rayon Blend</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Colours Available</span>
+                <span class="font-semibold text-white">Magenta / Fuchsia</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4">
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Embroidery Style</span>
+                <span class="font-semibold text-white">Hand-Detailed Floral Vines</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Sleeve Detail</span>
+                <span class="font-semibold text-white">Full sleeves with buttoned cuffs</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Wash Instructions</span>
+                <span class="font-semibold text-white">Dry clean or gentle hand wash</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spec Tab 2 -->
+        <div id="content-spec2" class="spec-content hidden">
+          <div class="grid gap-6 md:grid-cols-2 text-sm text-neutral-300">
+            <div class="flex flex-col gap-4">
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Product Class</span>
+                <span class="font-semibold text-white">Utility Crop Top + Trouser Set</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Fabric Composition</span>
+                <span class="font-semibold text-white">Linen-Cotton Blend (Smooth Texture)</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Colours Available</span>
+                <span class="font-semibold text-white">Vibrant Hot Pink</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4">
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Shirt Style</span>
+                <span class="font-semibold text-white">Short-Sleeve Cropped Utility Collar</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Pockets</span>
+                <span class="font-semibold text-white">Dual cargo breast flap pockets</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Bottom Details</span>
+                <span class="font-semibold text-white">High-waist matching trousers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spec Tab 3 -->
+        <div id="content-spec3" class="spec-content hidden">
+          <div class="grid gap-6 md:grid-cols-2 text-sm text-neutral-300">
+            <div class="flex flex-col gap-4">
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Product Class</span>
+                <span class="font-semibold text-white">Wrap Top + Denim Skirt Combo</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Fabric Composition</span>
+                <span class="font-semibold text-white">Georgette (Top) + Denim Cotton (Skirt)</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Colours Available</span>
+                <span class="font-semibold text-white">Hot Pink (Top) + Light Blue Denim (Skirt)</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4">
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Top Details</span>
+                <span class="font-semibold text-white">Sequin wrap style with side ties, long sleeves</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Skirt Details</span>
+                <span class="font-semibold text-white">High-waisted, heavy denim front pockets</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Wash Instructions</span>
+                <span class="font-semibold text-white">Hand wash cold, line dry</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spec Tab 4 -->
+        <div id="content-spec4" class="spec-content hidden">
+          <div class="grid gap-6 md:grid-cols-2 text-sm text-neutral-300">
+            <div class="flex flex-col gap-4">
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Product Class</span>
+                <span class="font-semibold text-white">A-Line Midi Frock / Dress</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Fabric Composition</span>
+                <span class="font-semibold text-white">Cotton-Rayon Soft Blend</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Colours Available</span>
+                <span class="font-semibold text-white">Lavender (Pictured), Light Green, & others</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4">
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Embroidery Design</span>
+                <span class="font-semibold text-white">White spiral-floral details on skirt & bodice</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Collar Details</span>
+                <span class="font-semibold text-white">Elegant white lace flat collar</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-neutral-900">
+                <span class="text-neutral-500">Wash Instructions</span>
+                <span class="font-semibold text-white">Hand wash cold, dry in shade</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PAYMENT & ORDER PROCESS -->
+    <section id="payment" class="border-t border-neutral-900 pt-16">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-magenta">Simple Checkout</span>
+        <h2 class="mt-3 font-display text-3xl font-extrabold text-white">How To Order & Pay</h2>
+        <p class="mt-3 text-sm text-neutral-400">Complete your payment securely via UPI or choose Cash on Delivery at your door.</p>
+      </div>
+
+      <!-- Payment QR & Copy Block -->
+      <div class="grid gap-8 lg:grid-cols-2 rounded-[2rem] bg-brand-charcoal border border-neutral-800 p-8 md:p-12 shadow-xl">
+        
+        <!-- UPI copy block -->
+        <div class="flex flex-col justify-center">
+          <span class="inline-flex rounded-full bg-brand-pink/10 border border-brand-pink/20 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-brand-magenta w-fit">
+            UPI Merchant Pay
+          </span>
+          <h3 class="mt-4 font-display text-2xl font-bold text-white">UPI Payment Transfer</h3>
+          <p class="mt-3 text-sm text-neutral-400 leading-relaxed">
+            Scan the code or transfer using our UPI number. Click a product below to automatically pre-set the scan amount on the QR code!
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-2 sm:gap-3">
+            <button onclick="setUpiAmount(1800, 'Embroidered Shirt')" class="px-4 py-2 text-xs font-bold rounded-xl border border-neutral-800 bg-neutral-950 text-neutral-300 hover:border-brand-magenta transition-all" id="amt-btn-1800">Set ₹1,800</button>
+            <button onclick="setUpiAmount(1199, 'Cropped Co-ord Set')" class="px-4 py-2 text-xs font-bold rounded-xl border border-neutral-800 bg-neutral-950 text-neutral-300 hover:border-brand-magenta transition-all" id="amt-btn-1199">Set ₹1,199</button>
+            <button onclick="setUpiAmount(1100, 'Pink Top & Skirt')" class="px-4 py-2 text-xs font-bold rounded-xl border border-neutral-800 bg-neutral-950 text-neutral-300 hover:border-brand-magenta transition-all" id="amt-btn-1100">Set ₹1,100</button>
+            <button onclick="setUpiAmount(1000, 'Embroidered Frock')" class="px-4 py-2 text-xs font-bold rounded-xl border border-neutral-800 bg-neutral-950 text-neutral-300 hover:border-brand-magenta transition-all" id="amt-btn-1000">Set ₹1,000</button>
+            <button onclick="setUpiAmount(0, 'Custom')" class="px-4 py-2 text-xs font-bold rounded-xl border border-brand-magenta bg-brand-pink/10 text-white transition-all" id="amt-btn-0">Generic (Any amount)</button>
+          </div>
+
+          <div class="mt-8 rounded-2xl bg-neutral-950 p-6 border border-neutral-900 flex flex-col gap-4">
+            <div>
+              <p class="text-xs text-neutral-500 font-semibold tracking-wider uppercase">UPI ID / Number</p>
+              <p class="text-2xl font-mono font-extrabold text-white tracking-wider mt-1" id="upiId">7006814950</p>
+            </div>
+            
+            <button onclick="copyUpiId()" id="copyUpiBtn" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-neutral-800 hover:bg-neutral-750 text-white border border-neutral-700 py-3 text-sm font-semibold tracking-wide transition-all">
+              <span class="material-symbols-outlined text-[1.2rem]" id="copyIcon">content_copy</span>
+              <span id="copyText">Copy UPI Number</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- QR Code Block -->
+        <div class="flex flex-col items-center justify-center border-t lg:border-t-0 lg:border-l border-neutral-800 pt-8 lg:pt-0 lg:pl-8">
+          <div class="relative bg-neutral-950 border border-neutral-900 rounded-2xl p-6 shadow-md shadow-black/50">
+            <!-- QR Image using QR Server API -->
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=d946ef&bgcolor=09090b&data=upi://pay?pa=7006814950@upi&pn=Guru%20Kirpa%20Garments" id="paymentQrCode" alt="Guru Kirpa Garments UPI QR Code" class="w-48 h-48 rounded-xl object-contain" />
+            <div class="absolute inset-0 border border-white/5 rounded-2xl pointer-events-none"></div>
+          </div>
+          
+          <div class="mt-4 text-center">
+            <span class="inline-flex items-center gap-1.5 text-xs text-neutral-400 font-semibold">
+              <span class="w-2 h-2 rounded-full bg-brand-magenta animate-ping"></span>
+              <span id="qrSubtitle">Scan to Pay Custom Amount</span>
+            </span>
+            <p class="mt-1 text-[0.65rem] text-neutral-500 leading-relaxed max-w-[250px]">
+              Works with Google Pay, PhonePe, Paytm, BHIM and all banking UPI apps.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTOM ORDER INQUIRY FORM -->
+    <section id="inquiry" class="border-t border-neutral-900 pt-16">
+      <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] items-start">
+        
+        <!-- Info Column -->
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-magenta">Custom Orders</span>
+          <h2 class="mt-3 font-display text-3xl font-extrabold text-white">Ask A Question</h2>
+          <p class="mt-4 text-sm text-neutral-400 leading-relaxed">
+            Need customized fits, sizing consultations, or wholesale booking options? Fill out this inquiry form, and it will draft a formatted message to send directly to Anu.
+          </p>
+        </div>
+
+        <!-- Form Column -->
+        <div class="rounded-3xl bg-neutral-900/20 border border-neutral-900 p-6 sm:p-10">
+          <form onsubmit="submitInquiry(event)" class="grid gap-6">
+            <div class="grid gap-2">
+              <label for="clientName" class="text-xs font-bold text-neutral-400 uppercase tracking-wide">Your Name</label>
+              <input type="text" id="clientName" required placeholder="Enter your full name" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-brand-magenta transition-colors" />
+            </div>
+
+            <div class="grid gap-2 sm:grid-cols-2">
+              <div class="grid gap-2">
+                <label for="clientCity" class="text-xs font-bold text-neutral-400 uppercase tracking-wide">City / Location</label>
+                <input type="text" id="clientCity" required placeholder="e.g. Jammu, Delhi, Mumbai" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-brand-magenta transition-colors" />
+              </div>
+              <div class="grid gap-2">
+                <label for="inquiryProduct" class="text-xs font-bold text-neutral-400 uppercase tracking-wide">Product of Interest</label>
+                <select id="inquiryProduct" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-magenta transition-colors">
+                  <option value="Embroidered Magenta Shirt">Embroidered Magenta Shirt (₹1,800)</option>
+                  <option value="Hot Pink Cropped Co-ord Set">Hot Pink Cropped Co-ord Set (₹1,199)</option>
+                  <option value="Pink Top with Jean Skirt">Pink Top & Jean Skirt (₹1,100)</option>
+                  <option value="Embroidered Collar Frock">Embroidered Collar Frock (₹1,000)</option>
+                  <option value="General Inquiry">General Boutique Inquiry</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid gap-2 sm:grid-cols-2">
+              <div class="grid gap-2">
+                <label for="inquirySize" class="text-xs font-bold text-neutral-400 uppercase tracking-wide">Preferred Size</label>
+                <select id="inquirySize" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-magenta transition-colors">
+                  <option value="Not Specified">Select size (Optional)</option>
+                  <option value="S">S - Small</option>
+                  <option value="M">M - Medium</option>
+                  <option value="L">L - Large</option>
+                  <option value="XL">XL - X-Large</option>
+                  <option value="XXL">XXL - XX-Large</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid gap-2">
+              <label for="clientMessage" class="text-xs font-bold text-neutral-400 uppercase tracking-wide">Your Inquiry / Message</label>
+              <textarea id="clientMessage" rows="4" required placeholder="Tell us what you'd like to ask or custom requests..." class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-brand-magenta transition-colors resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-pink to-brand-magenta hover:opacity-95 text-white py-3.5 text-sm font-bold shadow-lg shadow-brand-pink/20 transition-all">
+              <span class="material-symbols-outlined text-[1.2rem]">send</span> Send Inquiry via WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOUTIQUE CONTACT & LOCATION INFO -->
+    <section id="contact" class="border-t border-neutral-900 pt-16 pb-8">
+      <div class="grid gap-8 lg:grid-cols-3">
+        
+        <!-- Profile Box -->
+        <div class="rounded-3xl bg-neutral-900/30 border border-neutral-900 p-8 flex flex-col items-center text-center">
+          <div class="w-20 h-20 rounded-full bg-brand-charcoal border border-neutral-800 p-1 flex items-center justify-center overflow-hidden shadow-lg">
+            <span class="material-symbols-outlined text-[3rem] text-brand-magenta">woman</span>
+          </div>
+          <h3 class="mt-5 text-xl font-bold text-white">Anu</h3>
+          <p class="text-xs text-brand-magenta font-semibold mt-1">Founder & Owner</p>
+          <p class="mt-4 text-xs text-neutral-400 leading-relaxed">
+            Running a trusted apparel store in Jammu, personally selecting every fabric design to ensure beautiful styling and fit.
+          </p>
+        </div>
+
+        <!-- Direct Contact Info -->
+        <div class="rounded-3xl bg-neutral-900/30 border border-neutral-900 p-8 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-neutral-500 uppercase tracking-wider">Quick Channels</span>
+            <h3 class="text-lg font-bold text-white mt-1">Contact Information</h3>
+          </div>
+          
+          <div class="flex flex-col gap-5 mt-6">
+            <a href="tel:+917889472924" class="flex items-center gap-4 group">
+              <div class="w-10 h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-white group-hover:border-brand-magenta transition-colors">
+                <span class="material-symbols-outlined text-[1.2rem]">call</span>
+              </div>
+              <div>
+                <p class="text-[0.65rem] text-neutral-500 font-bold uppercase tracking-wider">Call Us</p>
+                <p class="text-sm font-semibold text-neutral-200 group-hover:text-brand-magenta transition-colors">+91 78894 72924</p>
+              </div>
+            </a>
+            
+            <a href="https://wa.me/917889472924" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 group">
+              <div class="w-10 h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-white group-hover:border-brand-magenta transition-colors">
+                <span class="material-symbols-outlined text-[1.2rem]">chat</span>
+              </div>
+              <div>
+                <p class="text-[0.65rem] text-neutral-500 font-bold uppercase tracking-wider">WhatsApp Chat</p>
+                <p class="text-sm font-semibold text-neutral-200 group-hover:text-brand-magenta transition-colors">+91 78894 72924</p>
+              </div>
+            </a>
+          </div>
+
+          <p class="text-[0.65rem] text-neutral-500 mt-6 leading-relaxed">
+            Support Hours: Monday to Saturday (10:00 AM - 8:00 PM IST)
+          </p>
+        </div>
+
+        <!-- Address Box -->
+        <div class="rounded-3xl bg-neutral-900/30 border border-neutral-900 p-8 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-neutral-500 uppercase tracking-wider">Store Location</span>
+            <h3 class="text-lg font-bold text-white mt-1">Visit Our Boutique</h3>
+          </div>
+          
+          <div class="mt-4 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-brand-magenta flex-shrink-0">
+              <span class="material-symbols-outlined text-[1.2rem]">location_on</span>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-neutral-200">Near Water Tank</p>
+              <p class="text-xs text-neutral-400 mt-1">Naibasti, Jammu, Jammu & Kashmir 180003</p>
+            </div>
+          </div>
+
+          <a href="https://maps.google.com/?q=Naibasti+Jammu" target="_blank" rel="noopener noreferrer" class="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-neutral-900 hover:bg-neutral-850 border border-neutral-800 hover:border-neutral-700 py-3 text-xs font-semibold text-neutral-300 hover:text-white transition-all">
+            <span class="material-symbols-outlined text-[1rem]">map</span> View on Google Maps
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-neutral-950 border-t border-neutral-900 mt-auto py-8 text-center text-neutral-500 text-xs">
+    <div class="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; 2026 Guru Kirpa Garments. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="#shop" class="hover:text-neutral-300 transition-colors">Showcase</a>
+        <a href="#payment" class="hover:text-neutral-300 transition-colors">Payment Terms</a>
+        <a href="#contact" class="hover:text-neutral-300 transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX / ZOOM PHOTO MODAL -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 bg-brand-black/95 blur-backdrop hidden" onclick="closeLightbox()">
+    
+    <!-- Close Button -->
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white transition-colors" aria-label="Close fullscreen">
+      <span class="material-symbols-outlined block">close</span>
+    </button>
+
+    <!-- Full Image Container -->
+    <div class="relative max-w-full max-h-[80vh] flex items-center justify-center" onclick="event.stopPropagation()">
+      <img src="" alt="Zoomed Product Image" class="max-w-full max-h-[80vh] rounded-2xl object-contain shadow-2xl border border-neutral-800" id="lightboxImage" />
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="fixed bottom-6 right-6 z-50 pointer-events-none flex flex-col gap-3">
+    <div id="copyToast" class="flex items-center gap-3 bg-neutral-900 border border-brand-magenta/40 text-neutral-100 px-5 py-4 rounded-2xl shadow-2xl transform translate-y-24 opacity-0 transition-all duration-300 max-w-sm">
+      <div class="w-8 h-8 rounded-lg bg-brand-pink/10 border border-brand-pink/20 flex items-center justify-center text-brand-magenta">
+        <span class="material-symbols-outlined text-[1.2rem]">done</span>
+      </div>
+      <div>
+        <p class="text-xs font-bold text-white">Copied to Clipboard!</p>
+        <p class="text-[0.65rem] text-neutral-400 mt-0.5">UPI ID copied successfully.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // State management
+    const products = {
+      P1: { name: 'Embroidered Magenta Shirt', price: 1800, size: '', color: '' },
+      P2: { name: 'Hot Pink Cropped Co-ord Set', price: 1199, size: '', color: '' },
+      P3: { name: 'Pink Top with Jean Skirt', price: 1100, size: '', color: '' },
+      P4: { name: 'Embroidered Collar Frock', price: 1000, size: '', color: 'Lavender' }
+    };
+    const phoneNo = '917889472924';
+
+    // Color Selector for Product 4
+    function selectColor(productId, color) {
+      products[productId].color = color;
+      
+      const buttons = document.querySelectorAll(`.${productId.toLowerCase()}-col-btn`);
+      buttons.forEach(btn => {
+        if (btn.textContent.trim() === color) {
+          btn.classList.remove('bg-neutral-950', 'border-neutral-800', 'text-neutral-300');
+          btn.classList.add('bg-brand-pink/10', 'border-brand-magenta', 'text-white');
+        } else {
+          btn.classList.remove('bg-brand-pink/10', 'border-brand-magenta', 'text-white');
+          btn.classList.add('bg-neutral-950', 'border-neutral-800', 'text-neutral-300');
+        }
+      });
+    }
+
+    // Sizing button toggle
+    function selectSize(productId, size) {
+      products[productId].size = size;
+      
+      // Update selected styling in UI for specific product
+      const buttons = document.querySelectorAll(`.${productId.toLowerCase()}-btn`);
+      buttons.forEach(btn => {
+        if (btn.textContent.trim() === size) {
+          btn.classList.remove('bg-neutral-950', 'border-neutral-800', 'text-neutral-300');
+          btn.classList.add('bg-brand-pink/10', 'border-brand-magenta', 'text-white', 'shadow-md', 'shadow-brand-pink/10');
+        } else {
+          btn.classList.remove('bg-brand-pink/10', 'border-brand-magenta', 'shadow-md', 'shadow-brand-pink/10');
+          btn.classList.add('bg-neutral-950', 'border-neutral-800', 'text-neutral-300');
+        }
+      });
+
+      // Clear warning if size is chosen
+      document.getElementById(`sizeWarning${productId}`).classList.add('hidden');
+    }
+
+    // Direct Purchase Action on WhatsApp
+    function buyProduct(productId) {
+      const prod = products[productId];
+      if (!prod.size) {
+        document.getElementById(`sizeWarning${productId}`).classList.remove('hidden');
+        return;
+      }
+
+      // Automatically pre-set UPI QR code amount when buying
+      setUpiAmount(prod.price, prod.name);
+
+      let detailsStr = `in size ${prod.size}`;
+      if (prod.color) {
+        detailsStr += ` and color ${prod.color}`;
+      }
+
+      const messageText = `Hello Anu, I want to buy the "${prod.name}" (Price: ₹${prod.price}) ${detailsStr}. Please confirm availability for order (COD/UPI).`;
+      const url = `https://wa.me/${phoneNo}?text=${encodeURIComponent(messageText)}`;
+      window.open(url, '_blank');
+    }
+
+    // Dynamic UPI Amount setter for QR code
+    function setUpiAmount(amount, productName) {
+      const qrImg = document.getElementById('paymentQrCode');
+      const subtitle = document.getElementById('qrSubtitle');
+      
+      // Reset active state of buttons
+      document.getElementById('amt-btn-1800').className = 'px-4 py-2 text-xs font-bold rounded-xl border border-neutral-800 bg-neutral-950 text-neutral-300 hover:border-brand-magenta transition-all';
+      document.getElementById('amt-btn-1199').className = 'px-4 py-2 text-xs font-bold rounded-xl border border-neutral-800 bg-neutral-950 text-neutral-300 hover:border-brand-magenta transition-all';
+      document.getElementById('amt-btn-1100').className = 'px-4 py-2 text-xs font-bold rounded-xl border border-neutral-800 bg-neutral-950 text-neutral-300 hover:border-brand-magenta transition-all';
+      document.getElementById('amt-btn-1000').className = 'px-4 py-2 text-xs font-bold rounded-xl border border-neutral-800 bg-neutral-950 text-neutral-300 hover:border-brand-magenta transition-all';
+      document.getElementById('amt-btn-0').className = 'px-4 py-2 text-xs font-bold rounded-xl border border-neutral-800 bg-neutral-950 text-neutral-300 hover:border-brand-magenta transition-all';
+
+      let upiUrl = 'upi://pay?pa=7006814950@upi&pn=Guru%20Kirpa%20Garments';
+      
+      if (amount > 0) {
+        upiUrl += `&am=${amount}&cu=INR`;
+        subtitle.textContent = `Scan to Pay ₹${amount} (${productName})`;
+        document.getElementById(`amt-btn-${amount}`).className = 'px-4 py-2 text-xs font-bold rounded-xl border border-brand-magenta bg-brand-pink/10 text-white transition-all';
+      } else {
+        subtitle.textContent = 'Scan to Pay Custom Amount';
+        document.getElementById('amt-btn-0').className = 'px-4 py-2 text-xs font-bold rounded-xl border border-brand-magenta bg-brand-pink/10 text-white transition-all';
+      }
+
+      // Generate new QR using QR server API
+      qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=d946ef&bgcolor=09090b&data=${encodeURIComponent(upiUrl)}`;
+    }
+
+    // Spec Tab Control
+    function showSpecTab(specId) {
+      // Hide all contents
+      document.querySelectorAll('.spec-content').forEach(el => el.classList.add('hidden'));
+      // Show targeted content
+      document.getElementById(`content-${specId}`).classList.remove('hidden');
+
+      // Reset border on tabs
+      document.getElementById('tab-spec1').className = 'text-sm font-bold pb-2 border-b-2 border-transparent text-neutral-400 hover:text-white transition-all whitespace-nowrap';
+      document.getElementById('tab-spec2').className = 'text-sm font-bold pb-2 border-b-2 border-transparent text-neutral-400 hover:text-white transition-all whitespace-nowrap';
+      document.getElementById('tab-spec3').className = 'text-sm font-bold pb-2 border-b-2 border-transparent text-neutral-400 hover:text-white transition-all whitespace-nowrap';
+      document.getElementById('tab-spec4').className = 'text-sm font-bold pb-2 border-b-2 border-transparent text-neutral-400 hover:text-white transition-all whitespace-nowrap';
+
+      // Set active border on current tab
+      document.getElementById(`tab-${specId}`).className = 'text-sm font-bold pb-2 border-b-2 border-brand-magenta text-white transition-all whitespace-nowrap';
+    }
+
+    // Form submission custom inquiry generator
+    function submitInquiry(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('clientName').value;
+      const city = document.getElementById('clientCity').value;
+      const product = document.getElementById('inquiryProduct').value;
+      const size = document.getElementById('inquirySize').value;
+      const message = document.getElementById('clientMessage').value;
+
+      const fullMessage = `Hello Anu,\n\nI have an inquiry regarding Guru Kirpa Garments:\n\n` +
+                          `• *Name*: ${name}\n` +
+                          `• *City*: ${city}\n` +
+                          `• *Product*: ${product}\n` +
+                          `• *Size*: ${size}\n` +
+                          `• *Message*: ${message}`;
+
+      const url = `https://wa.me/${phoneNo}?text=${encodeURIComponent(fullMessage)}`;
+      window.open(url, '_blank');
+    }
+
+    // Copy UPI function
+    function copyUpiId() {
+      const upiText = '7006814950';
+      navigator.clipboard.writeText(upiText).then(() => {
+        const btn = document.getElementById('copyUpiBtn');
+        const icon = document.getElementById('copyIcon');
+        const text = document.getElementById('copyText');
+
+        icon.textContent = 'check';
+        text.textContent = 'UPI Copied!';
+        btn.classList.remove('bg-neutral-800', 'border-neutral-700');
+        btn.classList.add('bg-emerald-950/20', 'border-emerald-600', 'text-emerald-400');
+
+        const toast = document.getElementById('copyToast');
+        toast.classList.remove('translate-y-24', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+
+        setTimeout(() => {
+          icon.textContent = 'content_copy';
+          text.textContent = 'Copy UPI Number';
+          btn.classList.remove('bg-emerald-950/20', 'border-emerald-600', 'text-emerald-400');
+          btn.classList.add('bg-neutral-800', 'border-neutral-700');
+
+          toast.classList.remove('translate-y-0', 'opacity-100');
+          toast.classList.add('translate-y-24', 'opacity-0');
+        }, 3000);
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
+    }
+
+    // Navigation Menu Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    const closeIcon = document.getElementById('closeIcon');
+
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    }
+
+    // Modal Control: Lightbox Image Zoom
+    function openLightbox(imgSrc) {
+      document.getElementById('lightboxImage').src = imgSrc;
+      document.getElementById('lightboxModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    const lightboxModal = document.getElementById('lightboxModal');
+    function closeLightbox() {
+      lightboxModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Listen for Escape key to close modals
+    window.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
