@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anu486941-maker.github.io/GURU-KIRPA-GARMENTS-JAMMU/sitemap.xml
